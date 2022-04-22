@@ -17,8 +17,15 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = date.getDay();
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
+}
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 function displayTemperature(response) {
@@ -48,5 +55,5 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = documents.querySelector("search-form");
+let form = documents.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
