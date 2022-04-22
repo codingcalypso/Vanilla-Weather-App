@@ -55,5 +55,5 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = documents.querySelector("#search-form");
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
