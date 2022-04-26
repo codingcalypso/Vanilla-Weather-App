@@ -62,7 +62,7 @@ function displayForecast(response) {
           `;
     }
   });
-  forecastHTML = forecastHTML`</div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
