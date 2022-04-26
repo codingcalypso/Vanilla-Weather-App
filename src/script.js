@@ -48,7 +48,7 @@ function displayForecast(response) {
                   forecastDay.weather[0].icon
                 }@2x.png"
                 alt=""
-                width="36"
+                width="42"
               />
               <div class="weather-forecast-temperature">
                 <span class="weather-forecast-temperature-max">${Math.round(
@@ -94,10 +94,9 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
-
-getForecast(response.data.coord);
-
 function search(city) {
   let apiKey = "1d9067ba73a1abfa7b6d138a505896e6";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
